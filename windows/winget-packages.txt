@@ -1,0 +1,18 @@
+7zip.7zip
+9NQ07FG50H2Q --BeWidgets
+9PF4KZ2VN4W9 --TranslucentTB
+Git.Git
+GitHub.GitHubDesktop.Beta
+GitHub.cli
+Google.Chrome
+Google.JapaneseIME
+MehediHassan.Tweeten
+MicaForEveryone.MicaForEveryone
+Microsoft.DotNet.AspNetCore.3_1
+Microsoft.PowerToys
+Microsoft.VisualStudioCode
+ShareX.ShareX
+VB-Audio.Voicemeeter.Potato
+Valve.Steam
+goatcorp.XIVLauncher
+valinet.ExplorerPatcher
