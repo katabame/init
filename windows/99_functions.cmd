@@ -1,7 +1,8 @@
 @echo off
 setlocal
 
-exit
+:: prevent execute as a normal script
+exit /b 0
 
 :isNumericOnly
     set value=%1

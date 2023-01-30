@@ -8,7 +8,7 @@ set totalSteps=::TOTAL_STEPS::
 
 call :showBanner
 
-: check administrative privileges and promote when not
+:: check administrative privileges and promote when not
 openfiles > nul 2>&1
 if errorlevel 1 (
     <nul set /p="[?] Requesting administrative privileges... "
@@ -17,9 +17,10 @@ if errorlevel 1 (
         echo Failed
         echo [^!] Unable to continue, aborted.
         goto 2> nul & del "%~f0"
+        exit /b 1
     ) else (
         echo Succeeded
         echo [*] Continue setup on newly opened terminal window.
+        exit /b 0
     )
-echo [-] This terminal window now can be closed.
-exit)
+)

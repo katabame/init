@@ -2,13 +2,13 @@
 
 echo [*] Software installation (Step: %currentSteps%/%totalSteps%)
 
-: install packages using winget
+:: install packages using winget
 for /f "tokens=1" %%a in ('curl.exe -fsSL https://init.kataba.me/win/pkgs') do (
     <nul set /p="Installing %%a... "
     winget install --silent --accept-package-agreements --accept-source-agreements --exact --id %%a > nul 2>&1
 if errorlevel 1 (echo Failed) else (echo Done))
 
-: install WSL2
+:: install WSL2
 <nul set /p="Installing Windows Subsystem for Linux... "
     wsl --install --no-launch --distribution Ubuntu > nul 2>&1
     if errorlevel 1 (echo Failed) else (echo Done)
@@ -18,7 +18,7 @@ echo:
 echo [*] Preferences installation (Step: %currentSteps%/%totalSteps%)
 echo:
 
-: clone preferences repository
+:: clone preferences repository
 if exist "%programfiles%"\Git\cmd\git.exe (
     <nul set /p="Cloning preferences repository... "
         "%programfiles%"\Git\cmd\git.exe clone https://github.com/katabame/.preferences.git "%userprofile%"\.preferences\ > nul 2>&1
