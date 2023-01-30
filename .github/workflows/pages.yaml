@@ -23,17 +23,13 @@ jobs:
 
       - name: Generate artifact for Windows
         run: |
-          mkdir -p ./artifact/win/pkgs/
-          touch ./artifact/win/index.html
-          touch ./artifact/win/pkgs/index.html
+          mkdir -p ./artifact/win/{cmd,pkgs}/
           for a in `ls -vd ./windows/* | grep ".cmd"`; do
-            echo $a
-            cat $a >> ./artifact/win/index.html
-            echo >> ./artifact/win/index.html
+            echo "`cat $a`" >> ./artifact/win/cmd/index.html
           done
-          sed -i "s/::COMMIT_SHA::/${{ github.sha }}/g" ./artifact/win/index.html
-          sed -i "s/::TOTAL_STEPS::/`cat ./artifact/win/index.html | grep --count 'set /a currentSteps+=1'`/g" ./artifact/win/index.html
-          cat ./windows/winget-packages.txt | sed -e "s/\s.*$//g" > ./artifact/win/pkgs/index.html
+          sed -i "s/::COMMIT_SHA::/${{ github.sha }}/g" ./artifact/win/cmd/index.html
+          sed -i "s/::TOTAL_STEPS::/`cat ./artifact/win/cmd/index.html | grep --count 'set /a currentSteps+=1'`/g" ./artifact/win/cmd/index.html
+          cp ./windows/entrypoint.ps1 ./artifact/win/index.html
 
       - name: Generate top page from readme
         run: |
@@ -41,18 +37,6 @@ jobs:
         env:
           REPOSITORY: ${{ github.repository }}
           GITHUB_TOKEN: ${{ github.token }}
-
-      - name: Debug print dir
-        run: |
-          ls -R ./
-
-      - name: Debug print win
-        run: |
-          cat ./artifact/win/index.html
-
-      - name: Debug print win/pkgs
-        run: |
-          cat ./artifact/win/pkgs/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

@@ -9,16 +9,16 @@ Preference files are provided at [katabame/.preferences](https://github.com/kata
 
 Assumed environment: Windows 11
 
-### PowerShell (43 characters)
+### PowerShell (34 characters)
 
 ```powershell
-iwr -o .cmd https://init.kataba.me/win;.cmd
+iwr https://init.kataba.me/win|iex
 ```
 
-### Command Prompt (47 characters)  
+### Command Prompt (51 characters)  
 
 ```batchfile
-curl -fsSL https://init.kataba.me/win>.cmd&.cmd
+curl -fsSL https://init.kataba.me/win/cmd>.cmd&.cmd
 ```
 
 > **Note**  
