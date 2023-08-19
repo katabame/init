@@ -1,55 +1,69 @@
 name: Generate artifact and Deploy
 
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+    push:
+        branches: ["main"]
+    workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    contents: read
+    pages: write
+    id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    group: "pages"
+    cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
 
-      - name: Generate artifact for Windows
-        run: |
-          mkdir -p ./artifact/win/{cmd,pkgs}/
-          for a in `ls -vd ./windows/* | grep ".cmd"`; do
-            echo "`cat $a`" >> ./artifact/win/cmd/index.html
-          done
-          sed -i "s/::COMMIT_SHA::/${{ github.sha }}/g" ./artifact/win/cmd/index.html
-          sed -i "s/::TOTAL_STEPS::/`cat ./artifact/win/cmd/index.html | grep --count 'set /a currentSteps+=1'`/g" ./artifact/win/cmd/index.html
-          cp ./windows/entrypoint.ps1 ./artifact/win/index.html
+            - name: Generate artifact for Windows
+              run: |
+                  mkdir -p ./artifact/win/{cmd,pkgs}/
+                  for file in `ls -vd ./windows/* | grep ".cmd"`; do
+                    echo "`cat ${file}`" >> ./artifact/win/cmd/index.html
+                  done
+                  sed -i "s/::COMMIT_SHA::/${{ github.sha }}/g" ./artifact/win/cmd/index.html
+                  sed -i "s/::TOTAL_STEPS::/`cat ./artifact/win/cmd/index.html | grep --count 'set /a currentSteps+=1'`/g" ./artifact/win/cmd/index.html
+                  cp ./windows/entrypoint.ps1 ./artifact/win/index.html
 
-      - name: Generate top page from readme
-        run: |
-          gh api --method POST -H "Accept: application/vnd.github+json" /markdown -f mode="gfm" -f context=$REPOSITORY -f text="$(cat ./README.md)" > ./artifact/index.html
-        env:
-          REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ github.token }}
+            - name: Generate artifact for macOS
+              run: |
+                  mkdir -p ./artifact/mac/
+                  for file in `ls -vd ./macos/* | grep ".sh"; do
+                    echo "`cat ${file}`" >> ./artifact/mac/index.html
+                  done
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "./artifact/"
+            - name: Generate artifact for Linux
+              run: |
+                  mkdir -p ./artifact/linux/
+                  for file in `ls -vd ./linux/* | grep ".sh"; do
+                    echo "`cat ${file}`" >> ./artifact/linux/index.html
+                  done
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+            - name: Generate top page from readme
+              run: |
+                  gh api --method POST -H "Accept: application/vnd.github+json" /markdown -f mode="gfm" -f context=$REPOSITORY -f text="$(cat ./README.md)" > ./artifact/index.html
+              env:
+                  REPOSITORY: ${{ github.repository }}
+                  GITHUB_TOKEN: ${{ github.token }}
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v1
+              with:
+                  path: "./artifact/"
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v1
