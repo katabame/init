@@ -1,1 +1,3 @@
 windows/* eol=crlf
+macos/* eol=lf
+linux/* eol=lf
