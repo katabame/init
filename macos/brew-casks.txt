@@ -1,0 +1,28 @@
+# Cask (GUI Application)
+
+# Utils
+alt-tab
+karabiner-elements
+raycast
+rectangle
+linearmouse
+
+# Manager
+1password
+1password-cli
+
+# Env
+google-chrome
+google-japanese-ime
+
+betterdiscord-installer
+discord
+
+# Code / Design
+affinity-designer
+iterm2
+visual-studio-code
+
+# Game
+lunar-client
+xiv-on-mac

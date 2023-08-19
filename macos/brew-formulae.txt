@@ -1,0 +1,12 @@
+# Formula (CUI Application)
+
+# Utils
+mas
+FelixKratz/formulae/sketchybar
+
+# Terminal env
+nano
+yqrashawn/goku/goku
+deno
+fish
+gh
