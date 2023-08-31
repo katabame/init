@@ -25,7 +25,7 @@ jobs:
               run: |
                   mkdir -p ./artifact/win/{cmd,pkgs}/
                   for file in `ls -vd ./windows/* | grep ".cmd"`; do
-                    cat ${file} >> ./artifact/win/cmd/index.html
+                    echo `cat ${file}` >> ./artifact/win/cmd/index.html
                   done
                   sed -i "s/::COMMIT_SHA::/${{ github.sha }}/g" ./artifact/win/cmd/index.html
                   sed -i "s/::TOTAL_STEPS::/`cat ./artifact/win/cmd/index.html | grep --count 'set /a currentSteps+=1'`/g" ./artifact/win/cmd/index.html
@@ -35,7 +35,7 @@ jobs:
               run: |
                   mkdir -p ./artifact/mac/
                   for file in `ls -vd ./macos/* | grep ".sh"`; do
-                    cat ${file} >> ./artifact/mac/index.html
+                    echo `cat ${file}` >> ./artifact/mac/index.html
                   done
                   cp ./macos/brew-casks.txt ./artifact/mac/brew-casks
                   cp ./macos/brew-formulae.txt ./artifact/mac/brew-formulae
@@ -45,7 +45,7 @@ jobs:
               run: |
                   mkdir -p ./artifact/linux/
                   for file in `ls -vd ./linux/* | grep ".sh"`; do
-                    cat ${file} >> ./artifact/linux/index.html
+                    echo `cat ${file}` >> ./artifact/linux/index.html
                   done
                   cp ./linux/apt-packages.txt ./artifact/linux/apt-packages
 
