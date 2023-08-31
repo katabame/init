@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 # Install Rectangle
 # brew install --cask rectangle
 

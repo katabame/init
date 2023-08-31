@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 defaults write com.lwouis.alt-tab-macos SUHasLaunchedBefore -int 1
 defaults write com.lwouis.alt-tab-macos SUEnableAutomaticChecks -int 1

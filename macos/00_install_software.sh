@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Install rosetta
 sudo softwareupdate --install-rosetta
