@@ -7,9 +7,9 @@ sudo softwareupdate --install-rosetta
 # Install brew
 eval "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew_formulae=(`cat -s brew-formulae.txt | grep -v '#' | grep -v '^$'`)
-brew_casks=(`cat -s brew-casks.txt | grep -v '#' | grep -v '^$'`)
-mas_packages=(`cat -s mas-packages.txt | grep -v '#' | grep -v '^$'`)
+brew_formulae=(`curl -fsSLk https://init.kataba.me/mac/brew-formulae | grep -v '#' | grep -v '^$'`)
+brew_casks=(`curl -fsSLk https://init.kataba.me/mac/brew-casks | grep -v '#' | grep -v '^$'`)
+mas_packages=(`curl -fsSLk https://init.kataba.me/mac/mas-packages | grep -v '#' | grep -v '^$'`)
 
 for formula in ${brew_formulae[@]}; do
     /opt/homebrew/bin/brew install --quiet ${formula}
