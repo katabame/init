@@ -32,9 +32,9 @@ curl -fsSL https://init.kataba.me/win/cmd>.cmd&.cmd
 
 ## macOS
 
-### Command line (43 characters)
+### Command line (40 characters)
 ```bash
-curl -fsSLk https://init.kataba.me/mac|bash
+curl -Lk https://init.kataba.me/mac|bash
 ```
 
 ### Behavior
@@ -43,9 +43,9 @@ curl -fsSLk https://init.kataba.me/mac|bash
 
 ## Linux
 
-### Command line (45 characters)
+### Command line (42 characters)
 ```bash
-curl -fsSLk https://init.kataba.me/linux|bash
+curl -Lk https://init.kataba.me/linux|bash
 ```
 
 ### Behavior
