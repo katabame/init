@@ -20,4 +20,4 @@ ln -fs ~/.preferences/macos/karabiner.edn ~/.config/karabiner.edn
 goku
 
 # sudo with TouchID
-echo "auth       sufficient     pam_tid.so" | sudo tee -a /etc/pam.d/sudo
+#echo "auth       sufficient     pam_tid.so" | sudo tee -a /etc/pam.d/sudo
