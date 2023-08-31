@@ -1,7 +1,7 @@
 # init
 
-[This repository](https://github.com/katabame/init/) contains scripts for setup environment after (re)installing Operating System.  
-Also scripts are automatically bundled and deployed to <https://init.kataba.me> for provide one-liner experience.  
+[This repository](https://github.com/katabame/init/) contains scripts for setup environment after (re)installing Operating System.
+Also scripts are automatically bundled and deployed to <https://init.kataba.me> for provide one-liner experience.
 
 Preference files are provided at [katabame/.preferences](https://github.com/katabame/.preferences) repository.
 
@@ -15,13 +15,13 @@ Assumed environment: Windows 11
 iwr https://init.kataba.me/win|iex
 ```
 
-### Command Prompt (51 characters)  
+### Command Prompt (51 characters)
 
 ```batchfile
 curl -fsSL https://init.kataba.me/win/cmd>.cmd&.cmd
 ```
 
-> **Note**  
+> **Note**
 > `curl` in **cmd.exe** and **powershell.exe** is [**different** command](https://curl.se/windows/microsoft.html).
 
 ### Behavior
@@ -30,10 +30,24 @@ curl -fsSL https://init.kataba.me/win/cmd>.cmd&.cmd
 * Install softwares using winget
 * Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
 
+## macOS
+
+### Command line (43 characters)
+```bash
+curl -fsSLk https://init.kataba.me/mac|bash
+```
+
+### Behavior
+* Install softwares using brew and mas
+* Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
+
 ## Linux
 
-> To be implemented when got motivation
+### Command line (45 characters)
+```bash
+curl -fsSLk https://init.kataba.me/linux|bash
+```
 
-## MacOS
-
-> To be implemented when got MacOS computer
+### Behavior
+* Install softwares using apt
+* Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
