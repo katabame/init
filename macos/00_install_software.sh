@@ -3,14 +3,14 @@ set -e
 
 
 if [ ! -e /Library/Apple/usr/libexec/oah/RosettaLinux/rosetta ]; then
-    echo '               init.kataba.me Phase 1 / 4'
+    echo '               init.kataba.me Phase 1'
     echo 'Please type following command to install Rosetta2'
     echo 'sudo softwareupdate --install-rosetta'
     exit 1
 fi
 
 if [ ! -e /opt/homebrew/bin/brew ]; then
-    echo '               init.kataba.me Phase 2 / 4'
+    echo '               init.kataba.me Phase 2'
     echo 'Please follow instructions to install brew'
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh > ~/brew.sh
     chmod +x ~/brew.sh
@@ -18,7 +18,7 @@ if [ ! -e /opt/homebrew/bin/brew ]; then
     rm ~/brew.sh
     exit 1
 else
-    echo '               init.kataba.me Phase 3 / 4'
+    echo '               init.kataba.me Phase 3'
     brew_formulae=(`curl -fsSLk https://init.kataba.me/mac/brew-formulae | grep -v '#' | grep -v '^$'`)
     brew_casks=(`curl -fsSLk https://init.kataba.me/mac/brew-casks | grep -v '#' | grep -v '^$'`)
     #mas_packages=(`curl -fsSLk https://init.kataba.me/mac/mas-packages | grep -v '#' | grep -v '^$'`)
@@ -34,8 +34,4 @@ else
     #for mas in ${mas_packages[@]}; do
     #    NONINTERACTIVE=1 HOMEBREW_NO_INSTALL_CLEANUP=1 /opt/homebrew/bin/mas install ${mas}
     #done
-    exit 1
 fi
-
-echo
-echo '               init.kataba.me Phase 4 / 4'
