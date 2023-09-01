@@ -3,7 +3,7 @@ set -e
 
 if [ -e /Library/Apple/usr/libexec/oah/RosettaLinux/rosetta ]; then
     echo 'Found Rosetta2'
-elif
+else
     echo '    init.kataba.me Phase 1'
     echo 'Please type following command to install Rosetta2'
     echo 'sudo softwareupdate --install-rosetta'
@@ -26,7 +26,7 @@ if [ -e /opt/homebrew/bin/brew ]; then
     #for mas in ${mas_packages[@]}; do
     #    NONINTERACTIVE=1 HOMEBREW_NO_INSTALL_CLEANUP=1 /opt/homebrew/bin/mas install ${mas}
     #done
-elif
+else
     echo '    init.kataba.me Phase 2'
     echo 'Please follow instructions to install brew'
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh > ~/brew.sh
