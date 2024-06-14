@@ -3,7 +3,7 @@
 echo [*] Software installation (Step: %currentSteps%/%totalSteps%)
 
 :: install packages using winget
-for /f "tokens=1" %%a in ('curl.exe -fsSL https://init.kataba.me/win/pkgs') do (
+for /f "tokens=1" %%a in ('curl.exe -fsSL https://init.kataba.me/win/winget-packages') do (
     <nul set /p="Installing %%a... "
     winget install --silent --accept-package-agreements --accept-source-agreements --exact --id %%a > nul 2>&1
 if errorlevel 1 (echo Failed) else (echo Done))
