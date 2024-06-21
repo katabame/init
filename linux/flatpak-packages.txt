@@ -1,0 +1,4 @@
+it.mijorus.gearlever
+com.obsproject.Studio
+dev.goats.xivlauncher
+org.prismlauncher.PrismLauncher

@@ -5,7 +5,32 @@ Also scripts are automatically bundled and deployed to <https://init.kataba.me> 
 
 Preference files are provided at [katabame/.preferences](https://github.com/katabame/.preferences) repository.
 
-## Windows
+## Legends
+* 🟢: Actively Maintained
+* 🟨: Passively Maintained
+* 🔺: Not Maintained
+
+
+## Linux 🟢
+
+Assumed environment: Ubuntu 24.04 LTS (Noble Numbat)
+
+### Using wget (42 characters)
+```bash
+wget -O- https://init.kataba.me/linux|bash
+```
+
+### Using curl (38 characters)
+```bash
+curl https://init.kataba.me/linux|bash
+```
+
+### Behavior
+* Install softwares using apt
+* Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
+
+
+## Windows 🟨
 
 Assumed environment: Windows 11
 
@@ -15,13 +40,13 @@ Assumed environment: Windows 11
 iwr https://init.kataba.me/win|iex
 ```
 
-### Command Prompt (51 characters)
+### Command Prompt (45 characters)
 
 ```batchfile
-curl -fsSL https://init.kataba.me/win/cmd>.cmd&.cmd
+curl https://init.kataba.me/win/cmd>.cmd&.cmd
 ```
 
-> **Note**
+> [!Note]
 > `curl` in **cmd.exe** and **powershell.exe** is [**different** command](https://curl.se/windows/microsoft.html).
 
 ### Behavior
@@ -30,7 +55,8 @@ curl -fsSL https://init.kataba.me/win/cmd>.cmd&.cmd
 * Install softwares using winget
 * Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
 
-## macOS
+
+## macOS 🔺
 
 ### Command line (39 characters)
 ```bash
@@ -39,15 +65,4 @@ curl -L https://init.kataba.me/mac|bash
 
 ### Behavior
 * Install softwares using brew and mas
-* Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
-
-## Linux
-
-### Command line (41 characters)
-```bash
-curl -L https://init.kataba.me/linux|bash
-```
-
-### Behavior
-* Install softwares using apt
 * Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
