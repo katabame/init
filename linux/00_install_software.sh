@@ -33,8 +33,8 @@ sudo apt-get install -y --no-install-recommends ${apt_packages[@]}
 
 # flatpak
 flatpak_packages=(`curl -fsSLk https://init.kataba.me/linux/flatpak-packages | grep -v '#' | grep -v '^$'`)
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub ${flatpak_packages[@]}
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install -y flathub ${flatpak_packages[@]}
 #for package in ${flatpak_packages[@]}; do
 #    flatpak install -y flathub ${package}
 #done
