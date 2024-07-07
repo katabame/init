@@ -14,3 +14,6 @@ grim
 slurp
 wl-clipboard
 qt6-wayland
+vlc
+thunderbird
+flatpak
