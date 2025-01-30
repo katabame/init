@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 echo '────────────────────────────────────────────────────'
-echo '               init.kataba.me Phase 3'
+echo '               init.kataba.me Phase 2'
 echo '               Applying preference...'
 echo '────────────────────────────────────────────────────'
 

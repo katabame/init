@@ -11,16 +11,16 @@ sudo apt-get update
 sudo apt-get upgrade -y --no-install-recommends
 type -p curl >/dev/null || sudo apt-get install -y --no-install-recommends curl
 
-echo '────────────────────────────────────────────────────'
-echo '               init.kataba.me Phase 1'
-echo '               Installing hyprland...'
-echo '────────────────────────────────────────────────────'
+#echo '────────────────────────────────────────────────────'
+#echo '               init.kataba.me Phase 1'
+#echo '               Installing hyprland...'
+#echo '────────────────────────────────────────────────────'
 
 # hyprland
-curl https://hypr.kataba.me/build.sh | bash
+#curl https://hypr.kataba.me/build.sh | bash
 
 echo '────────────────────────────────────────────────────'
-echo '               init.kataba.me Phase 2'
+echo '               init.kataba.me Phase 1'
 echo '               Installing software...'
 echo '────────────────────────────────────────────────────'
 
@@ -53,9 +53,9 @@ sudo apt-get install -y --no-install-recommends ./chrome.deb
 rm ./chrome.deb
 
 # warp
-wget -O warp.deb https://releases.warp.dev/stable/v0.2024.06.04.08.02.stable_03/warp-terminal_0.2024.06.04.08.02.stable.03_amd64.deb
-sudo apt-get install -y --no-install-recommends ./warp.deb
-rm ./warp.deb
+#wget -O warp.deb https://releases.warp.dev/stable/v0.2024.06.04.08.02.stable_03/warp-terminal_0.2024.06.04.08.02.stable.03_amd64.deb
+#sudo apt-get install -y --no-install-recommends ./warp.deb
+#rm ./warp.deb
 
 # 1password
 wget -O 1password.deb https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
@@ -71,10 +71,10 @@ rm ./steam.deb
 wget -O cursor.appimage https://downloader.cursor.sh/linux/appImage/x64
 
 # lunarClient
-wget -O lunarclient.appimage https://launcherupdates.lunarclientcdn.com/Lunar%20Client-3.2.10.AppImage
+#wget -O lunarclient.appimage https://launcherupdates.lunarclientcdn.com/Lunar%20Client-3.2.10.AppImage
 
 # xremap
-wget -O xremap.zip https://github.com/xremap/xremap/releases/download/v0.10.0/xremap-linux-x86_64-wlroots.zip
+wget -O xremap.zip https://github.com/xremap/xremap/releases/latest/download/xremap-linux-x86_64-hypr.zip
 unzip ./xremap.zip
 sudo mv ./xremap /usr/local/bin
 sudo usermod -aG input $USER
@@ -91,7 +91,7 @@ sudo apt-get update && \
 sudo apt install -y --no-install-recommends gh
 
 # virtualbox
-wget -O virtualbox.deb https://download.virtualbox.org/virtualbox/7.0.18/virtualbox-7.0_7.0.18-162988~Ubuntu~noble_amd64.deb
-sudo apt-get install -y --no-install-recommends ./virtualbox.deb
-rm ./virtualbox.deb
-sudo usermod -aG vboxusers katabame
+#wget -O virtualbox.deb https://download.virtualbox.org/virtualbox/7.0.18/virtualbox-7.0_7.0.18-162988~Ubuntu~noble_amd64.deb
+#sudo apt-get install -y --no-install-recommends ./virtualbox.deb
+#rm ./virtualbox.deb
+#sudo usermod -aG vboxusers katabame

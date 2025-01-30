@@ -17,3 +17,5 @@ qt6-wayland
 vlc
 thunderbird
 flatpak
+hyprland
+alacritty
