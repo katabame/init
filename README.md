@@ -10,19 +10,36 @@ Preference files are provided at [katabame/.preferences](https://github.com/kata
 * 🟨: Passively Maintained
 * 🔺: Not Maintained
 
+## Arch 🟢
 
-## Linux 🟢
+Assumed environment: Arch
 
-Assumed environment: Ubuntu 24.04 LTS (Noble Numbat)
-
-### Using wget (42 characters)
+### Using wget (41 characters)
 ```bash
-wget -O- https://init.kataba.me/linux|bash
+wget -O- https://init.kataba.me/arch|bash
 ```
 
-### Using curl (38 characters)
+### Using curl (40 characters)
 ```bash
-curl https://init.kataba.me/linux|bash
+curl -L https://init.kataba.me/arch|bash
+```
+
+### Behavior
+* Install softwares using apt
+* Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
+
+## Ubuntu 🟢
+
+Assumed environment: Ubuntu 24.10 (Oracular Oriole)
+
+### Using wget (43 characters)
+```bash
+wget -O- https://init.kataba.me/ubuntu|bash
+```
+
+### Using curl (42 characters)
+```bash
+curl -L https://init.kataba.me/ubuntu|bash
 ```
 
 ### Behavior
