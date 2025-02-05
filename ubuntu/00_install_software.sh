@@ -25,14 +25,14 @@ echo '               Installing software...'
 echo '────────────────────────────────────────────────────'
 
 # apt
-apt_packages=(`curl -fsSLk https://init.kataba.me/linux/apt-packages | grep -v '#' | grep -v '^$'`)
+apt_packages=(`curl -fsSLk https://init.kataba.me/ubuntu/apt-packages | grep -v '#' | grep -v '^$'`)
 sudo apt-get install -y --no-install-recommends ${apt_packages[@]}
 #for package in ${apt_packages[@]}; do
 #    sudo apt-get install -y --no-install-recommends ${package}
 #done
 
 # flatpak
-flatpak_packages=(`curl -fsSLk https://init.kataba.me/linux/flatpak-packages | grep -v '#' | grep -v '^$'`)
+flatpak_packages=(`curl -fsSLk https://init.kataba.me/ubuntu/flatpak-packages | grep -v '#' | grep -v '^$'`)
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install -y flathub ${flatpak_packages[@]}
 #for package in ${flatpak_packages[@]}; do
