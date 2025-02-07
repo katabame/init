@@ -11,6 +11,7 @@ sudo pacman -Syu --noconfirm
 type -p curl >/dev/null || sudo pacman -S --noconfirm curl
 
 sudo pacman -S --needed --noconfirm git base-devel
+cd ~
 git clone https://aur.archlinux.org/yay-bin.git
 cd ./yay-bin
 makepkg -si --noconfirm
@@ -28,6 +29,11 @@ sudo yay -S --noconfirm ${packages[@]}
 
 # obs
 sudo usermod -aG video katabame
+
+# virtualbox
+sudo usermod -aG vboxusers katabame
+sudo dkms autoinstall
+sudo modprobe vboxdrv
 
 # xremap
 echo 'uinput' | sudo tee /etc/modules-load.d/uinput.conf

@@ -20,6 +20,9 @@ cider2-bin
 thunderbird
 obs-studio
 virtualbox
+virtualbox-host-modules-arch
+virtualbox-guest-iso
+linux-headers
 cursor-bin
 prismlauncher-qt5-bin
 swaync
