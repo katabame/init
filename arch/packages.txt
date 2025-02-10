@@ -35,3 +35,4 @@ hyprpaper
 vlc
 gnome-keyring
 libsecret
+hyprpolkitagent
