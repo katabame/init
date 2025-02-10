@@ -16,7 +16,6 @@ ttf-font-awesome
 pavucontrol
 lunar-client
 xivlauncher
-cider2-bin
 thunderbird
 obs-studio
 virtualbox
