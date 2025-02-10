@@ -32,7 +32,7 @@ sudo usermod -aG video katabame
 
 # virtualbox
 sudo usermod -aG vboxusers katabame
-sudo dkms autoinstall
+#sudo dkms autoinstall
 sudo modprobe vboxdrv
 
 # xremap
