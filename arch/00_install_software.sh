@@ -28,10 +28,10 @@ packages=(`curl -fsSLk https://init.kataba.me/arch/packages | grep -v '#' | grep
 yay -S --noconfirm ${packages[@]}
 
 # obs
-sudo usermod -aG video katabame
+sudo usermod -aG video $USER
 
 # virtualbox
-sudo usermod -aG vboxusers katabame
+sudo usermod -aG vboxusers $USER
 #sudo dkms autoinstall
 sudo modprobe vboxdrv
 
