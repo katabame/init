@@ -25,7 +25,7 @@ echo '────────────────────────�
 
 # yay
 packages=(`curl -fsSLk https://init.kataba.me/arch/packages | grep -v '#' | grep -v '^$'`)
-sudo yay -S --noconfirm ${packages[@]}
+yay -S --noconfirm ${packages[@]}
 
 # obs
 sudo usermod -aG video katabame
