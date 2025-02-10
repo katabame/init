@@ -25,10 +25,10 @@ curl -L https://init.kataba.me/arch|bash
 ```
 
 ### Behavior
-* Install softwares using apt
+* Install softwares using yay
 * Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
 
-## Ubuntu 🟢
+## Ubuntu 🟨
 
 Assumed environment: Ubuntu 24.10 (Oracular Oriole)
 
@@ -47,7 +47,7 @@ curl -L https://init.kataba.me/ubuntu|bash
 * Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
 
 
-## Windows 🟨
+## Windows 🔺
 
 Assumed environment: Windows 11
 
