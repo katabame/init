@@ -32,3 +32,4 @@ wl-clipboard
 waybar-module-pacman-updates-git
 osu-lazer-bin
 hyprpaper
+vlc
