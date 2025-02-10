@@ -12,17 +12,18 @@ Preference files are provided at [katabame/.preferences](https://github.com/kata
 
 ## Arch 🟢
 
-Assumed environment: Arch
+Assumed environment: Arch (Hyprland)
+
+### Using curl (40 characters)
+```bash
+curl -L https://init.kataba.me/arch|bash
+```
 
 ### Using wget (41 characters)
 ```bash
 wget -O- https://init.kataba.me/arch|bash
 ```
 
-### Using curl (40 characters)
-```bash
-curl -L https://init.kataba.me/arch|bash
-```
 
 ### Behavior
 * Install softwares using yay
