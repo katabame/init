@@ -36,3 +36,6 @@ vlc
 gnome-keyring
 libsecret
 hyprpolkitagent
+bluez
+bluez-utils
+blueman
