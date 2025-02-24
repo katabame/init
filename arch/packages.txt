@@ -29,7 +29,7 @@ swaync
 wireplumber
 xremap-hypr-bin
 wl-clipboard
-waybar-module-pacman-updates-git
+waybar-updates
 osu-lazer-bin
 hyprpaper
 vlc
