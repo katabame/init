@@ -12,7 +12,7 @@ github-cli
 fuzzel
 steam
 unzip
-ttf-font-awesome
+otf-font-awesome
 pavucontrol
 lunar-client
 xivlauncher
