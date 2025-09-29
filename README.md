@@ -29,7 +29,7 @@ wget -O- https://init.kataba.me/arch|bash
 * Install softwares using yay
 * Clone [katabame/.preferences](https://github.com/katabame/.preferences) and configure
 
-## Ubuntu 🟨
+## Ubuntu 🔺
 
 Assumed environment: Ubuntu 24.10 (Oracular Oriole)
 
