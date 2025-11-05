@@ -41,3 +41,4 @@ hyprpolkitagent
 bluez
 bluez-utils
 blueman
+archlinux-xdg-menu
