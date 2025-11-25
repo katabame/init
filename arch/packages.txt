@@ -42,3 +42,4 @@ bluez
 bluez-utils
 blueman
 archlinux-xdg-menu
+nautilus
