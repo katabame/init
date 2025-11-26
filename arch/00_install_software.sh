@@ -41,3 +41,9 @@ echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess"' | sudo tee /etc/udev/rule
 
 # bluetooth
 sudo systemctl enable bluetooth
+
+# deno
+curl -fsSL https://deno.land/install.sh | sh
+
+# timedate fix
+sudo timedatectl set-local-rtc 1
